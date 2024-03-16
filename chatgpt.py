@@ -22,8 +22,6 @@ def callGPT3(text):
     ]
   )
   print(gpt3.choices[0].message.content)
-  value = '''Try visualizing this headline with a simple one-line art style depicting an elderly person with a smile,
-  delivering a meal to a person in need.'''
   return(gpt3.choices[0].message.content)
 
 # Ja mees launchojam tik sho failu, tad izprinte promptu ar tadu tekstu
