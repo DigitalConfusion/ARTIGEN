@@ -13,6 +13,6 @@ reddit.read_only=True
 submissions = reddit.subreddit('Art').top(time_filter='day', limit=5)
 
 for submission in submissions:
-    print(submission.title)
+    print(submission.title.split(',')[0])
 
 
