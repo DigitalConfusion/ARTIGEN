@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from chatgpt import callGPT3
 from reddit import getTitles
+from datetime import datetime
 from PIL import Image          # pillow, for processing image types
 import PIL              # for decoding images if recieved in the reply
 import os
@@ -32,7 +33,7 @@ import requests
 image_response = requests.get(image_url)
 
 if image_response.status_code == 200:
-    with open("bildeCool.png", "wb") as image_file:
+    with open(f"bildeCool_{datetime.now().strftime('%H.%M')}.png", "wb") as image_file:
         image_file.write(image_response.content)
     print("bildeCool.png was saved")
 else:

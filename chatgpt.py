@@ -19,11 +19,15 @@ def callGPT3(text):
       {"role": "user", "content": prompt}
     ]
   )
-  print(gpt3.choices[0].message.content)
-  return(gpt3.choices[0].message.content)
+  a = (gpt3.choices[0].message.content)
+  print("\n\n\n\n\n", gpt3.choices, "\n\n\n\n\n\n")
+  print(a)
+  return(a)
 
 # Ja mees launchojam tik sho failu, tad izprinte promptu ar tadu tekstu
 callGPT3([
+    "Alien",
+    "Crazy monster",  
     "Snake",
     "Jelly donuts",
     "Mechanic Witch",
