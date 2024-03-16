@@ -24,8 +24,9 @@ def callGPT3(text):
 
 # Ja mees launchojam tik sho failu, tad izprinte promptu ar tadu tekstu
 callGPT3([
-    "Dolph Lundgren and Wife Emma Krokdal Officially Become U.S. Citizens: 'It's About Time' (Exclusive)",
-    "Ex-McLaren Engineer Reveals Childhood Sexual Abuse To Empower Others",
-    "Germany on course to meet 2030 climate goal, minister says",
-    "Everyday Heroes: 98-year-old Meals on Wheels volunteer delivers to those in need"
+    "Snake",
+    "Jelly donuts",
+    "Mechanic Witch",
+    "Gazing",
+    "Incapacitated"
 ])
