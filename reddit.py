@@ -12,12 +12,13 @@ def getTitles():
 
     reddit.read_only=True
 
-    submissions = reddit.subreddit('Art').top(time_filter='day', limit=5)
+    submissions = reddit.subreddit('Art').top(time_filter='day', limit=15)
 
     promptamSutam = []
     for submission in submissions:
-        print(submission.title.split(',')[0])
+        #print(submission.title.split(',')[0])
         promptamSutam.append(submission.title.split(',')[0])
+    print(promptamSutam)
     return(promptamSutam)
 getTitles()
 
