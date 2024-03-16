@@ -8,6 +8,8 @@ api = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI(
   api_key=api
+  )
+
 generatedPromt = callGPT3()
 
 response = client.images.generate(
