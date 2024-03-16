@@ -6,11 +6,10 @@ load_dotenv()
 
 api = os.getenv('OPENAI_API_KEY')
 
-from openai import OpenAI
 client = OpenAI(
   api_key=api
-)
 generatedPromt = callGPT3()
+
 response = client.images.generate(
   model="dall-e-2",
   prompt=generatedPromt,
