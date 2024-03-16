@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from chatgpt import callGPT3
 from reddit import getTitles
+from PIL import Image          # pillow, for processing image types
+import PIL              # for decoding images if recieved in the reply
 import os
 load_dotenv()
 
@@ -12,10 +14,10 @@ client = OpenAI(
   api_key=api
 )
 redditPrompt = getTitles()
-generatedPromt = callGPT3(redditPrompt)
+generatedPrompt = callGPT3(redditPrompt)
 response = client.images.generate(
   model="dall-e-3",
-  prompt=generatedPromt,
+  prompt=generatedPrompt,
   size="1024x1024",
   quality="standard",
   n=1,
@@ -23,3 +25,15 @@ response = client.images.generate(
 
 image_url = response.data[0].url
 print(image_url)
+
+# Now you can download the image and save it using its URL
+import requests
+
+image_response = requests.get(image_url)
+
+if image_response.status_code == 200:
+    with open("bildeCool.png", "wb") as image_file:
+        image_file.write(image_response.content)
+    print("bildeCool.png was saved")
+else:
+    print("Failed to download image.")
