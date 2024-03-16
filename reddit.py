@@ -1,15 +1,17 @@
 import praw
+import os
 
 reddit= praw.Reddit(
-    client_id="CLIENT_ID",
-    client_secret="CLIENT_SECRET",
-    user_agent="ARTIGEN",
+    client_id= os.getenv('REDDIT_CLIENT_ID'),
+    client_secret= os.getenv('REDDIT_CLIENT_SECRET'),
+    user_agent=os.getenv('REDDIT_USER_AGENT'),
 )
 
 reddit.read_only=True
 
 submissions = reddit.subreddit('UpliftingNews').hot(limit=5)
-for submission in submissions:
+
+for submission in reddit.subreddit('UpliftingNews').hot(limit=5):
     print(submission.title)
 
 
