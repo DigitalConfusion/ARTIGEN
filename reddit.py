@@ -10,7 +10,7 @@ reddit= praw.Reddit(
 
 reddit.read_only=True
 
-submissions = reddit.subreddit('UpliftingNews').hot(limit=5)
+submissions = reddit.subreddit('UpliftingNews').top(limit=5)
 
 for submission in submissions:
     print(submission.title)
