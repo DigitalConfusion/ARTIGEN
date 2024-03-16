@@ -1,6 +1,4 @@
 def callGPT3(text):
-  # Importing the openai module
-  # from reddit import getTitles
   from openai import OpenAI
   import os
   from dotenv import load_dotenv
