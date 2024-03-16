@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from openai import OpenAI
 from chatgpt import callGPT3
+from reddit import getTitles
 import os
 load_dotenv()
 
@@ -10,8 +11,8 @@ from openai import OpenAI
 client = OpenAI(
   api_key=api
 )
-generatedPromt = callGPT3(["Dolph Lundgren and Wife Emma Krokdal Officially Become U.S. Citizens: 'It's About Time' (Exclusive)",
-    "Ex-McLaren Engineer Reveals Childhood Sexual Abuse To Empower Others"])
+redditPrompt = getTitles()
+generatedPromt = callGPT3(redditPrompt)
 response = client.images.generate(
   model="dall-e-2",
   prompt=generatedPromt,

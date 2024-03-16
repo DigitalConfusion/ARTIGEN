@@ -26,6 +26,7 @@ def callGPT3(text):
   delivering a meal to a person in need.'''
   return(value)
 
+#Ja mees launchojam tik sho failu, tad izprinte promptu ar tadu tekstu
 callGPT3([
     "Dolph Lundgren and Wife Emma Krokdal Officially Become U.S. Citizens: 'It's About Time' (Exclusive)",
     "Ex-McLaren Engineer Reveals Childhood Sexual Abuse To Empower Others",

@@ -2,17 +2,24 @@ import praw
 import os
 from dotenv import load_dotenv
 load_dotenv()
-reddit= praw.Reddit(
-    client_id= os.getenv('REDDIT_CLIENT_ID'),
-    client_secret= os.getenv('REDDIT_CLIENT_SECRET'),
-    user_agent=os.getenv('REDDIT_USER_AGENT'),
-)
 
-reddit.read_only=True
+def getTitles():
+    reddit= praw.Reddit(
+        client_id= os.getenv('REDDIT_CLIENT_ID'),
+        client_secret= os.getenv('REDDIT_CLIENT_SECRET'),
+        user_agent=os.getenv('REDDIT_USER_AGENT'),
+    )
 
-submissions = reddit.subreddit('Art').top(time_filter='day', limit=5)
+    reddit.read_only=True
 
-for submission in submissions:
-    print(submission.title.split(',')[0])
+    submissions = reddit.subreddit('Art').top(time_filter='day', limit=5)
+
+    promptamSutam = []
+    for submission in submissions:
+        print(submission.title.split(',')[0])
+        promptamSutam.append(submission.title.split(',')[0])
+    return(promptamSutam)
+getTitles()
+
 
 
