@@ -11,11 +11,11 @@ ax.set_title('Plot of G-code Coordinates')
 ax.grid(True)
 x = 0
 # Parse the G-code and extract X and Y coorcddinates
-with open("graph14.gcode", "r") as file:
+with open("potencialiPrezentejam.gcode", "r") as file:
     for line in file:
         x += 1
         print("line " + str(x))
-      
+
         if line.startswith("G0") or line.startswith("G1"):
             parts = line.split()
             x_coord = None
