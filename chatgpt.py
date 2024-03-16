@@ -7,6 +7,7 @@ def callGPT3(text):
   load_dotenv()
   # Setting the API key
   api = os.getenv('OPENAI_API_KEY')
+
   client = OpenAI(
     api_key=api
   )
