@@ -5,12 +5,13 @@ import os
 load_dotenv()
 
 api = os.getenv('OPENAI_API_KEY')
-
+print('\n\n\n\n\n\n')
 from openai import OpenAI
 client = OpenAI(
   api_key=api
 )
-generatedPromt = callGPT3()
+generatedPromt = callGPT3(["Dolph Lundgren and Wife Emma Krokdal Officially Become U.S. Citizens: 'It's About Time' (Exclusive)",
+    "Ex-McLaren Engineer Reveals Childhood Sexual Abuse To Empower Others"])
 response = client.images.generate(
   model="dall-e-2",
   prompt=generatedPromt,

@@ -3,6 +3,8 @@ def callGPT3(text):
   # from reddit import getTitles
   from openai import OpenAI
   import os
+  from dotenv import load_dotenv
+  load_dotenv()
   # Setting the API key
   api = os.getenv('OPENAI_API_KEY')
   client = OpenAI(
