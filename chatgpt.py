@@ -10,7 +10,7 @@ def callGPT3(text):
     api_key=api
   )
   # Creating the OpenAI GPT-3 client
-  prompt = '\n'.join(text) + "\n Choose the best headline (only one) to visualize as art using a simple one line art style and make a promt out of it."
+  prompt = '\n'.join(text) + "\n Choose the best headline (only one) to visualize as art using a simple, not detailed one continuous line art style and make a prompt out of it."
 
   gpt3 = client.chat.completions.create(
     model="gpt-3.5-turbo",

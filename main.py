@@ -33,7 +33,7 @@ import requests
 image_response = requests.get(image_url)
 
 if image_response.status_code == 200:
-    with open(f"bildeCool_{datetime.now().strftime('%H.%M')}.png", "wb") as image_file:
+    with open(f"bildeCool_{datetime.now().strftime('%H.%M.%S')}.png", "wb") as image_file:
         image_file.write(image_response.content)
     print("bildeCool.png was saved")
 else:
