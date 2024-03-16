@@ -12,10 +12,11 @@ client = OpenAI(
 
 response = client.images.generate(
   model="dall-e-2",
-  prompt="line art of a white siamese cat",
+  prompt="line art of the greatest f1 driver",
   size="256x256",
   quality="standard",
   n=1,
 )
 
 image_url = response.data[0].url
+print(image_url)
