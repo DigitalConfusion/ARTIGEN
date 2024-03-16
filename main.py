@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 from openai import OpenAI
-
+from chatgpt import callGPT3
 import os
 load_dotenv()
 
@@ -10,7 +10,7 @@ from openai import OpenAI
 client = OpenAI(
   api_key=api
 )
-generatedPromt = "98-year-old Meals on Wheels volunteer delivers meals to those in need"
+generatedPromt = callGPT3()
 response = client.images.generate(
   model="dall-e-2",
   prompt=generatedPromt,
