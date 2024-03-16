@@ -14,9 +14,9 @@ client = OpenAI(
 redditPrompt = getTitles()
 generatedPromt = callGPT3(redditPrompt)
 response = client.images.generate(
-  model="dall-e-2",
+  model="dall-e-3",
   prompt=generatedPromt,
-  size="256x256",
+  size="1024x1024",
   quality="standard",
   n=1,
 )
